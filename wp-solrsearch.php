@@ -29,8 +29,7 @@ along with (Plugin Name). If not, see (http://link to your plugin license).
 function solr_search_template($template)
 {
   global $wp_query;
-  if ($wp_query->is_search() && $wp_query->is_main_query() && get_query_var('s', false)) {
-    //$urlsolr ="https://tst-solr.portali.csi.it/solr/crp/select?";
+  if ($wp_query->is_search() && $wp_query->is_main_query() && get_query_var('s', false)) {    
     $urlsolr = get_option('myplugin_option_url');
     $limit = get_option('myplugin_option_item_x_page');
     $pagenum = isset($_GET['pagenum']) ? absint($_GET['pagenum']) : 1;
